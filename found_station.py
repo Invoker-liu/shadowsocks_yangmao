@@ -65,7 +65,7 @@ class zoomEy:
 
     def save(self):
         if len(self.hosts) > 0:
-            f = open('hosts/hosts.json','w+')
+            f = open('hosts/hosts.json','a+')
             hosts = json.dumps(f.read())
             if len(hosts):
                 hosts = list(set(hosts).union(set(self.hosts)))
@@ -89,10 +89,10 @@ email = email()  #先生成一个邮箱
 x=1
 while x<=40:
     start = x
-    end = x+1
+    end = x+2
     t = threading.Thread(target=getStations, args=(start,end)) 
     t.start()
     # t.join()
-    x += 4
+    x += 2
 
 
